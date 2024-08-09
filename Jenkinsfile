@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('CLONE') {
+            steps {
+                echo 'CLONE'
+            }
+        }
+        
+        stage('BUILD') {
+            steps {
+                echo 'BUILD'
+            }
+            
+            stage('DEPLOY') {
+            steps {
+                echo 'DEPLOY'
+
