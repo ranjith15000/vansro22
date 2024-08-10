@@ -17,6 +17,18 @@ stage('BUILD') {
                sh "mvn clean package"
             }
         }
+stage('DEPLOY') {
+            steps {
+               sshagent(['Tomcat_Logins']) {
+  sh "scp -o StrictHostKeyChecking=no target/vansro-1.0-SNAPSHOT.jar  ec2-user@13.232.222.147:/opt/tomcat9/webapps"
+
+    }
+  }
+}
+
+
+
+        
     }
 }
 
