@@ -19,9 +19,9 @@ environment{
 
 stage('DEPLOY') {
             steps {
-                sshagent(['Tomcat-Login']) {
+                sshagent(['tomcat-Login']) {
 
-sh "scp -o StrictHostKeyChecking=no target/vansro-1.0-SNAPSHOT.jar  ec2-user@15.206.72.185:/opt/tomcat9/webapps"
+sh "scp -o StrictHostKeyChecking=no target/vansro-1.0-SNAPSHOT.jar  ec2-user@13.127.239.171:/opt/apache-tomcat-9.0.95/webapps"
 
                     
 
